@@ -1,0 +1,17 @@
+name: building the job
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    -  name: source code checkout
+       uses: actions/checkout@v4
+    -  name: installing java jdk
+       uses: actions/setup-java@v4
+       with:
+         java-version: '21'
+    -  name: installing maven
+       run: sudo apt-get install -y maven
+    -  name: building solution with maven
+       run: mvn clean package
+    
