@@ -20,5 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     -  name: package creation
-       run: mvn clean package
+       run: |
+         cd /home/ubuntu/maven-web-app-ashokit
+         mvn clean package
     
