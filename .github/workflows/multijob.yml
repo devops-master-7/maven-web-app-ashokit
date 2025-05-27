@@ -16,6 +16,7 @@ jobs:
     -  name: building solution with maven
        run: mvn clean package
   result:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     -  name: printing greetings
