@@ -1,0 +1,24 @@
+name: building maven web app
+on: workflow_dispatch
+jobs:
+  source-code-checkout:
+    runs-on: ubuntu-latest
+    steps:
+    -  name: source code checkout
+       uses: actions/checkout@v4
+  installing-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+    -  name: installing java jdk
+       uses: actions/setup-java@v4
+       with:
+         distribution: 'temurin'
+         java-version: '21'
+    -  name: installing maven
+       run: sudo apt-get install maven -y
+  creation-of-package:
+    runs-on: ubuntu-latest
+    steps:
+    -  name: package creation
+       run: mvn clean package
+    
