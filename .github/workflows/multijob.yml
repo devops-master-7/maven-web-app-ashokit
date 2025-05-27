@@ -21,6 +21,6 @@ jobs:
     steps:
     -  name: package creation
        run: |
-         cd /home/runner/work/maven-web-app-ashokit/maven-web-app-ashokit
+         cd ${{ github.workspace }}/maven-web-app-ashokit
          mvn clean package
     
